@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'
+import ItemComponent from './ItemComponent';
 
 function App() {
+  const [items,setItems] = useState({
+    items:[
+      {id:1,name:'Hamza',age:22},
+      {id:2,name:'Mohamed',age:23},
+      {id:3,name:'Abdo',age:24},
+    ]
+  })
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      React App
+      <ItemComponent items={items.items}/>
     </div>
   );
 }
