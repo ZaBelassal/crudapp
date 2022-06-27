@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ItemComponent({items}) {
+function todoItems({items}) {
   return (
     <div>{items.map(item => {
         return (
@@ -13,4 +13,4 @@ function ItemComponent({items}) {
   )
 }
 
-export default ItemComponent
+export default todoItems

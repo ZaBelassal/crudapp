@@ -1,6 +1,6 @@
 import './App.css';
 import {useState} from 'react'
-import ItemComponent from './ItemComponent';
+import TodoItems from './TodoItems';
 
 function App() {
   const [items,setItems] = useState({
@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       React App
-      <ItemComponent items={items.items}/>
+      <TodoItems items={items.items}/>
     </div>
   );
 }
