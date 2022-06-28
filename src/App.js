@@ -1,6 +1,7 @@
 import './App.css';
 import {useState} from 'react'
 import TodoItems from './TodoItems';
+import AddItem from './AddItem';
 
 function App() {
   const [items,setItems] = useState({
@@ -12,10 +13,31 @@ function App() {
   })
 
 
+  const deleteItem = (id) => {
+
+    let allItems = items.items;
+    console.log(allItems)
+    let i = allItems.findIndex(item=> item.id===id)
+    console.log(i);
+    allItems.splice(i,1)
+    setItems({ 
+    items:allItems
+    })
+  }
+
+  const addUser = (item) =>{
+    
+    let allItems = items.items;
+    allItems.push(item)
+
+
+  }
+
   return (
     <div className="App">
       React App
-      <TodoItems items={items.items}/>
+      <TodoItems items={items.items} deleteItem={deleteItem}/>
+      <AddItem addUser={addUser}/>
     </div>
   );
 }
